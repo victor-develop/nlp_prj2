@@ -15,7 +15,10 @@ This converts a string into a processable dataset for get_fs()
 @return [['','a','b'], ['a', 'b', 'c',], ['b','c','d'],['c','d','']
 '''
 def make_data_set(string):
+    string = string.strip('\n') 
     length = len(string)
+    if length==0:
+        raise Exception("empty string is not accepted for features generation")
     def scope_access_check(index):
         if index < 0 or index >= length:
             raise Exception('out of index scope')
@@ -82,8 +85,5 @@ def get_fs(data_set_item):
 this basically converts a string into a list of features
 '''
 def get_features(chars):
-    if len(chars)==0:
-        raise Exception("empty string is not accepted for features generation")
-    chars = chars.strip('\n')
     data_set = make_data_set(chars)
     return map(get_fs,data_set)

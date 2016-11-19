@@ -10,7 +10,7 @@ from nltk import MaxentClassifier
 from fp_tools import *
 import pickle
 import fs_extractor
-
+from labeling import *
 
 
 if __name__ == "__main__":
@@ -26,7 +26,7 @@ if __name__ == "__main__":
     mx_file = open('mx_classifier.pkl', 'rb')
     mx_classifier = pickle.load(mx_file)
     mx_file.close()
-    
+    mx_classifier = load_classifier('mx_classifier.pkl')
     '''
     convert test data into features set
     '''

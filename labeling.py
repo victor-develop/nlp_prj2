@@ -4,6 +4,7 @@
 
 import re
 from fs_extractor import *
+import pickle
 
 '''
 It label a sentence's every char-feature as 'n' but the last char is 'y'
@@ -24,7 +25,11 @@ def get_labeled(line):
     
     return out_list
     
-
+def load_classifier(filepath):
+    f = open(filepath, 'rb')
+    classifier = pickle.load(f)
+    f.close()
+    return classifier
 
 
     

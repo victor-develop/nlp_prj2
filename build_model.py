@@ -38,3 +38,5 @@ if __name__ == "__main__":
     mx_file.close()
 
     in_file.close()
+
+    mx_classifier.show_most_informative_features(5) | stdout
