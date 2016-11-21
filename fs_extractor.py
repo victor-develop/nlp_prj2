@@ -51,12 +51,12 @@ def make_data_set(string):
 '''
 It process a list with 3 items: previous char, current char, next char
 @param list, e.g. ['a','b','c']
-@return feature list, just look at the code
+@return just look at the code
 '''
-def get_fs(data_set_item):
-    prev_char = data_set_item[0]
-    current_char = data_set_item[1]
-    next_char = data_set_item[2]
+def get_fs(item):
+    prev_char = item[0]
+    current_char = item[1]
+    next_char = item[2]
 
     return {'is_punctuation':is_punc(current_char),
             'is_previous_char_punctuation':is_punc(prev_char),
@@ -83,6 +83,24 @@ def get_fs(data_set_item):
 
 '''
 this basically converts a string into a list of features
+@param chars: string, e.g. "ab.d"
+@return e.g. [{  'is_punctuation':0,
+            'is_previous_char_punctuation':0,
+            'is_next_char_punctuation':0,
+            'this_char':'a'
+        },{'is_punctuation':0,
+            'is_previous_char_punctuation':a,
+            'is_next_char_punctuation':b,
+            'this_char':'b'
+        },{'is_punctuation':1,
+            'is_previous_char_punctuation':0,
+            'is_next_char_punctuation':0,
+            'this_char':'.'
+        },{'is_punctuation':0,
+            'is_previous_char_punctuation':1,
+            'is_next_char_punctuation':0,
+            'this_char':'d'
+        }]
 '''
 def get_features(chars):
     data_set = make_data_set(chars)

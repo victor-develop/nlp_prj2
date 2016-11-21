@@ -1,6 +1,21 @@
 #!/usr/bin/env python
 """ Infix programming toolkit
 
+https://github.com/JulienPalard/Pipe.git
+
+VERSION
+    1.3
+
+DATE
+    10 Nov 2010
+
+AUTHOR
+    Julien Palard <julien@eeple.fr>
+
+CREDITS
+    Jerome Schneider, for its Python skillz,
+    and dalexander for contributing
+
 Module enabling a sh like infix syntax (using pipes).
 
 = Introduction =
